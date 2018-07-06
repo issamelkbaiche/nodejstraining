@@ -1,6 +1,29 @@
-<h4 *ngIf="auth.isAuthenticated()">
-  You are logged in!
+<!DOCTYPE html>
+<html>
+<h4 *ngIf="auth.isAuthenticated()"id='ic'>
+ You are logged in!
+<br/>
+<br/>
+<br/>
+ You can now CREATE a new Sprint or VIEW the last ones !
 </h4>
-<h4 *ngIf="!auth.isAuthenticated()">
-  You are not logged in! Please <a (click)="auth.login()">Log In</a> to continue.
+<h4 style="font-weight: bold; font-style: oblique;"        *ngIf="!auth.isAuthenticated()" id='ib'>
+  You are not logged in! Please <a style="background-color:aquamarine; font-weight: bold;" (click)="auth.login()">Log In</a> to use the app.
 </h4>
+<div *ngIf="!auth.isAuthenticated()" _ngcontent-c3="" class="card" fxlayout="column" fxlayoutalign="start" fxlayoutgap="1em"
+  style="flex-direction: column; box-sizing: border-box; display: flex; max-width: 100%; place-content: stretch flex-start; align-items: stretch;">
+  <h1 class = "abou" _ngcontent-c3="" style="text-align: center">About</h1>
+  <p _ngcontent-c3="" style="margin-bottom: 1em;">Sprint is a minimalist desktop time management application inspired by the
+    <a _ngcontent-c3="" href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Pomodoro Technique</a>. </p>
+  <p _ngcontent-c3="" style="margin-bottom: 1em;">Choose a sprint length, enter a brief description of the activity, and get things done.</p>
+  <p _ngcontent-c3="" style="margin-bottom: 1em;">Preferred browser:
+    <a _ngcontent-c3="" href="https://www.google.com/chrome/">Chrome</a>. </p>
+ 
+    
+</div>
+
+
+
+
+
+  

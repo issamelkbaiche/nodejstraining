@@ -8,15 +8,20 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
 import { ROUTES } from './app.routes';
+import { AuthGuardService } from './auth/auth-guard.service';
 
 import { AuthService } from './auth/auth.service';
 import { CallbackComponent } from './callback/callback.component';
+import { SprintComponent } from './sprint/sprint.component';
+import { NewComponent } from './new/new.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CallbackComponent
+    CallbackComponent,
+    SprintComponent,
+    NewComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,7 @@ import { CallbackComponent } from './callback/callback.component';
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

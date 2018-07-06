@@ -1,11 +1,15 @@
 <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
-      <a class="navbar-brand" href="#">Auth0 - Angular</a>
+      <a class="navbar-brand" href="#" id='ia'>S_P_R_I_N_T</a>
       <form class="form-inline">
-        <button class="btn btn-primary my-2 my-sm-0 mr-2"
-          routerLink="/" type="button">
-            Home
+<button class="btn btn-primary my-2 my-sm-0 mr-2"  [routerLink]="['/new']" *ngIf="auth.isAuthenticated()"  type="button">
+  New Sprint
+</button>
+        <button class="btn btn-primary my-2 my-sm-0 mr-2" [routerLink]="['/sprint']"
+ *ngIf="auth.isAuthenticated()" routerLink="/" type="button">
+           View Past Sprints
         </button>
+
 
         <button id="qsLoginBtn"
           class="btn btn-primary my-2 my-sm-0"

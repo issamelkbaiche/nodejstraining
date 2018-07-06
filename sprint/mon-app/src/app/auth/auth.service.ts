@@ -17,7 +17,7 @@ export class AuthService {
     scope: 'openid'
   });
 
-  constructor(public router: Router) {}
+  constructor(public router: Router) { }
 
   public login(): void {
     this.auth0.authorize();
@@ -42,6 +42,7 @@ export class AuthService {
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
+    this.router.navigate(['/sprint']);
   }
 
   public logout(): void {
@@ -50,7 +51,7 @@ export class AuthService {
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
     // Go back to the home route
-    this.router.navigate(['/']);
+    this.router.navigate(['']);
   }
 
   public isAuthenticated(): boolean {
